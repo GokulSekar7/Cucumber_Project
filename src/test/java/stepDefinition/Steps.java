@@ -10,8 +10,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class Steps {
-	public ChromeDriver driver;
+public class Steps extends ProjectSpecificMethod {
+	
 	
 	@Given ("Launch the browser")
 	public void launchTheBrowser() {
@@ -25,9 +25,10 @@ public class Steps {
 		driver.get("http://leaftaps.com/opentaps/");
 	}
 	
-	@Given ("Enter the username")
-	public void enterUsername() {
-		driver.findElement(By.id("username")).sendKeys("demosalesmanager");
+	@Given ("Enter the username as (.*)$")
+	public void enterUsername(String un) throws InterruptedException {
+		Thread.sleep(3000);
+		driver.findElement(By.id("username")).sendKeys(un);
 	}
 	
 	@Given ("Enter the password")
