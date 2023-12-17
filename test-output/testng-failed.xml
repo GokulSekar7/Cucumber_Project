@@ -6,8 +6,10 @@
       <class name="runner.LoginRunner">
         <methods>
           <include name="setUpClass"/>
+          <include name="launchTheBrowser"/>
           <include name="tearDownClass"/>
           <include name="runScenario" invocation-numbers="0"/>
+          <include name="postCondition"/>
         </methods>
       </class> <!-- runner.LoginRunner -->
     </classes>
